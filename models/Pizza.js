@@ -10,7 +10,7 @@ const PizzaSchema = new Schema(
     },
     createdBy: {
       type: String,
-      required: "You need to provide a name!",
+      required: "You need to provide your name!",
       trim: true,
     },
     createdAt: {
