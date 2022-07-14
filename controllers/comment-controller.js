@@ -62,16 +62,15 @@ const commentController = {
   },
 
   // remove reply
-removeReply({ params }, res) {
-  Comment.findOneAndUpdate(
-    { _id: params.commentId },
-    { $pull: { replies: { replyId: params.replyId } } },
-    { new: true }
-  )
-    .then(dbPizzaData => res.json(dbPizzaData))
-    .catch(err => res.json(err));
-}
-
+  removeReply({ params }, res) {
+    Comment.findOneAndUpdate(
+      { _id: params.commentId },
+      { $pull: { replies: { replyId: params.replyId } } },
+      { new: true }
+    )
+      .then((dbPizzaData) => res.json(dbPizzaData))
+      .catch((err) => res.json(err));
+  },
 };
 
 module.exports = commentController;
